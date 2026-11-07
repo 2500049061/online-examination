@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Examination</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><span class="logo">OE</span><span>Online Examination</span></div><span class="tag">STUDENT PORTAL</span></header>
+    <section id="loginView" class="panel login-panel">
+      <p class="eyebrow">WELCOME BACK</p><h1>Student login</h1>
+      <p class="muted">Sign in to start your examination.</p>
+      <form id="loginForm">
+        <label for="username">Username</label><input id="username" autocomplete="username" required placeholder="Enter username">
+        <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Enter password">
+        <p id="loginError" class="error" aria-live="polite"></p>
+        <button class="primary" type="submit">Login to exam <span>→</span></button>
+      </form>
+      <p class="hint">Demo: <b>student</b> / <b>1234</b></p>
+    </section>
+    <section id="examView" class="hidden">
+      <div class="exam-heading"><div><p class="eyebrow">GENERAL KNOWLEDGE</p><h1>Practice Examination</h1><p class="muted">Answer all five multiple-choice questions.</p></div><div class="timer-card"><span>TIME LEFT</span><strong id="timer">05:00</strong></div></div>
+      <div class="progress-track"><div id="progress"></div></div>
+      <form id="examForm"><div id="questions"></div><button class="primary submit" type="submit">Submit examination <span>→</span></button></form>
+    </section>
+    <section id="resultView" class="panel result-panel hidden">
+      <div class="result-icon">✓</div><p class="eyebrow">EXAM COMPLETED</p><h1>Your result</h1>
+      <div class="score" id="score">0/5</div><p id="resultMessage" class="muted"></p>
+      <div class="result-grid"><div><span>Percentage</span><b id="percentage">0%</b></div><div><span>Status</span><b id="status">—</b></div></div>
+      <button id="restart" class="secondary">Back to login</button>
+    </section>
+    <footer>Online Examination · Educational demo project</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
